@@ -8,7 +8,7 @@ and is used ubiquitously in industry.
 
 ## Why use VCS/Git?
 ### Collaboration
-Collaborating on a project is extremely complex without a Version Control System. This would be the equivalent of 
+Collaborating on a project is extremely complex without a Version Control System. This would be the equivalent of sending your code to a partner via Facebook Messenger.
 ### Versioning
 Keeping different versions of your project is essential, especially in industry. If you break build, you want to be able to roll back.
 Versioning allows you to neatly store file states, commit logs, and diffs so that you can reason about your project temporally.
@@ -66,6 +66,12 @@ Again, you first have to add your changed files to the staging environment.
 $ git add file0 file1 file2
 ```
 
+A faster way to do this would be to simply do:
+```
+$ git add -u # adds updated files which are already being tracked
+$ git add . # adds all files (including untracked)
+```
+
 Now you can commit your changed files. Your computer now has a snapshot.
 ```
 $ git commit -m "your commit message"
@@ -92,4 +98,9 @@ $ git remote add origin https://github.com/user/repo.git
 If you want to create another branch
 ```
 $ git checkout -b "yourBranchName"
+```
+
+If you want to update your branch with the most up to date code from master:
+```
+$ git pull --rebase origin master
 ```
